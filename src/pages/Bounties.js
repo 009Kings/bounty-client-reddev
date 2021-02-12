@@ -4,18 +4,7 @@ import BountyCard from '../partials/BountyCard';
 
 const Bounties = (props) => {
   // set Bounties state will hold all bounties
-  const [bounties, setBounties] = useState([
-    // {
-    //   name: 'Han Solo',
-    //   wantedFor : 'Owing money',
-    //   client : 'Jabba the Hut',
-    //   reward : 1000000,
-    //   ship: 'Millennium Falcon',
-    //   hunters :['Bobba Fett', 'Dengar', 'IG-88', 'Zuckuss', 'Greedo', 'Bossk', '4-LOM'],
-    //   captured: false,
-    //   lastSeen: 'yesterday'
-    // }
-  ]);
+  const [bounties, setBounties] = useState([]);
 
   // useEffect and axios to call our homemake organic API
   useEffect(() => {
