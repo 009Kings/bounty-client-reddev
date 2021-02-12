@@ -4,12 +4,23 @@ import BountyCard from '../partials/BountyCard';
 
 const Bounties = (props) => {
   // set Bounties state will hold all bounties
-  const [bounties, setBounties] = useState([]);
+  const [bounties, setBounties] = useState([
+    // {
+    //   name: 'Han Solo',
+    //   wantedFor : 'Owing money',
+    //   client : 'Jabba the Hut',
+    //   reward : 1000000,
+    //   ship: 'Millennium Falcon',
+    //   hunters :['Bobba Fett', 'Dengar', 'IG-88', 'Zuckuss', 'Greedo', 'Bossk', '4-LOM'],
+    //   captured: false,
+    //   lastSeen: 'yesterday'
+    // }
+  ]);
 
   // useEffect and axios to call our homemake organic API
   useEffect(() => {
     // TODO: Query Bounty Hunter Server
-    console.log('calling the server')
+    // console.log('calling the server')
     setBounties([
       {
         name: 'Han Solo',
@@ -26,12 +37,11 @@ const Bounties = (props) => {
 
   const handleToggleCaptured = (bountyId, captured) => {
     // change the captured key of the bounty at bountyId (index in bounty array)
-    let tempBounties = bounties;
+    let tempBounties = [...bounties];
     console.log('🔥')
-    console.log(tempBounties[0].captured)
+    console.log(tempBounties);
     tempBounties.splice(bountyId, 1, {...bounties[bountyId], captured: !captured});
     console.log('💩')
-    console.log(tempBounties[0].captured)
     setBounties(tempBounties);
   }
 

@@ -1,24 +1,25 @@
-const BountyCard = (props) => {
-  console.log(props);
+import { useEffect } from 'react';
 
-  let status = props.captured ? 
+const BountyCard = (props) => {
+
+    let status = props.captured ? 
     <span className="green">CAPTURED</span> : 
     <span className="red">STILL AT LARGE</span>
-
-  let lastSeen = props.lastSeen ?
+    
+    let lastSeen = props.lastSeen ?
     <p>Last seen: {props.lastSeen}</p> :
     null
-
-  let ship = props.ship ? 
-    <p>Currently using {props.ship} as trasportation</p> :
+    
+    let ship = props.ship ? 
+    <p>Currently using {props.ship} as transportation</p> :
     null
-  
-  let hunters = props.hunters.length > 0 ?
+    
+    let hunters = props.hunters.length > 0 ?
     props.hunters.join(', ') :
     'There are no bounty hunters on this case'
     
-  return (
-    <article className="bounty-card">
+    return (
+      <article className="bounty-card">
       <h3>{props.name} is {status}</h3>
       <h4>Reward for Capture: 💸{props.reward}</h4>
       <h5>Wanted for {props.wantedFor}</h5>
@@ -30,7 +31,7 @@ const BountyCard = (props) => {
         onClick={() => {
           props.toggleCaptured()
         }}
-      >Register Bounty as {!props.captured ? "closed" : "open"}</button>
+        >Register Bounty as {!props.captured ? "closed" : "open"}</button>
     </article>
   );
 }
