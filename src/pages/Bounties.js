@@ -13,6 +13,8 @@ const Bounties = (props) => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/bounties`)
     .then(response => {
       setBounties(response.data)
+    }).catch(err => {
+      console.log(`🔥`, err);
     })
   }, [])
 
