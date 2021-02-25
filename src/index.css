@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bounties-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.bounty-card {
+  margin: 1.5em 1em;
+  padding: .5em .25em;
+  padding-bottom: 1em;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 20em;
+  box-shadow: -0.5em 0.5em 14px 0px rgba(167, 160, 177, 0.522);
+}
+
+.green {
+  color: rgb(10, 164, 79);
+}
+
+.red {
+  color: rgb(225, 32, 51);
+}
