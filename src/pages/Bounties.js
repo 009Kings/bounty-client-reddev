@@ -9,6 +9,7 @@ const Bounties = (props) => {
 
   // useEffect and axios to call our homemake organic API
   useEffect(() => {
+    console.log(process.env.REACT_APP_SERVER_URL)
     axios.get(`${process.env.REACT_APP_SERVER_URL}/bounties`)
     .then(response => {
       setBounties(response.data)
